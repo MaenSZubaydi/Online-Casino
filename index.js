@@ -2,8 +2,10 @@
 
 
 let totalDeposit = 0;
+let totalBet = 0;
 
 
+const tableSlotsArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 let balanceView = document.querySelector("#balance-label");
 
@@ -14,7 +16,12 @@ let firstRow = document.querySelector("#first-row");
 let secondRow = document.querySelector("#second-row");
 let thirdRow = document.querySelector("#third-row");
 let fourthRow = document.querySelector("#fourth-row");
+let spinWheel = document.querySelector("#spin-wheel");
 
+spinWheel.addEventListener("click", function(){
+    let spinResult = Math.floor(Math.random() * 37);
+    alert(spinResult);
+})
 
 addBalanceButton.addEventListener("click", function(){
     let deposit = document.getElementById("balance-text");
@@ -30,168 +37,51 @@ thirdRow.addEventListener("click", placeBet);
 fourthRow.addEventListener("click", placeBet);
 
 function placeBet(e){
-    
+    totalDeposit = fetchBalance();
+
     if (e.target !== e.currentTarget) {
         let clickedButtonId = e.target.id;
         let buttonId = parseInt(clickedButtonId.toString().substring(5,7));
-        
+        let betSize = getBetSize();
+        if(checkDeposit(betSize)){
+            tableSlotsArray[buttonId]+=betSize;
+            let slotFinder = "slot" + buttonId;
+            let slot = document.querySelector('#'+slotFinder);
+            slot.innerHTML = tableSlotsArray[buttonId];
+        }
+    }  
+}
 
-        let slotFinder = "slot" + buttonId;
-        alert(slotFinder);
-        let slot = document.querySelector('#'+slotFinder);
-        slot.innerHTML = "hiiii";
-        alert(slotFinder);
-       
-
-
+function getBetSize(){
+    const betAmountRadioButtons = document.querySelectorAll(".bet_amount_radio_group");
+    let radioButtonId;
+    for (const radioButton of betAmountRadioButtons){
+        if(radioButton.checked){
+            radioButtonId = radioButton.id;
+            return parseInt(radioButtonId.toString().substring(7,10));
+        }
     }
-    
+
+}
+
+function checkDeposit(bet){
+    if (bet>totalDeposit){
+        alert("bet size exceeds deposit");
+        return false;
+    } else {
+        totalDeposit -= bet;
+        document.querySelector("#balance-label").innerHTML=totalDeposit;
+        return true;
+    }
+}
+
+function fetchBalance(){
+    let balance = document.querySelector("#balance-label");
+     return parseFloat(balance.innerHTML.toString());
 }
 
 
 
-let table_slots = [
-    { "slot-number":1,
-        "slot-bet":0
-    },
-    { "slot-number":2,
-        "slot-bet":0
-    },
-    { "slot-number":3,
-        "slot-bet":0
-    },
-    { "slot-number":4,
-        "slot-bet":0
-    },
-    { "slot-number":5,
-        "slot-bet":0
-    },
-    { "slot-number":6,
-        "slot-bet":0
-    },
-    { "slot-number":7,
-        "slot-bet":0
-    },
-    { "slot-number":8,
-        "slot-bet":0
-    },
-    { "slot-number":9,
-        "slot-bet":0
-    },
-    { "slot-number":10,
-        "slot-bet":0
-    },
-    { "slot-number":11,
-        "slot-bet":0
-    },
-    { "slot-number":12,
-        "slot-bet":0
-    },
-    { "slot-number":12,
-        "slot-bet":0
-    },
-    { "slot-number":13,
-        "slot-bet":0
-    },
-    { "slot-number":14,
-        "slot-bet":0
-    },
-    { "slot-number":15,
-        "slot-bet":0
-    },
-    { "slot-number":16,
-        "slot-bet":0
-    },
-    { "slot-number":17,
-        "slot-bet":0
-    },
-    { "slot-number":18,
-        "slot-bet":0
-    },
-    { "slot-number":19,
-        "slot-bet":0
-    },
-    { "slot-number":20,
-        "slot-bet":0
-    },
-    { "slot-number":21,
-        "slot-bet":0
-    },
-    { "slot-number":22,
-        "slot-bet":0
-    },
 
-    { "slot-number":23,
-        "slot-bet":0
-    },
-
-    { "slot-number":24,
-        "slot-bet":0
-    },
-
-    { "slot-number":25,
-        "slot-bet":0
-    },
-
-    { "slot-number":26,
-        "slot-bet":0
-    },
-
-    { "slot-number":27,
-        "slot-bet":0
-    },
-
-    { "slot-number":28,
-        "slot-bet":0
-    },
-
-    { "slot-number":29,
-        "slot-bet":0
-    },
-
-    { "slot-number":30,
-        "slot-bet":0
-    },
-
-    { "slot-number":31,
-        "slot-bet":0
-    },
-
-    { "slot-number":32,
-        "slot-bet":0
-    },
-
-    { "slot-number":33,
-        "slot-bet":0
-    },
-
-    { "slot-number":34,
-        "slot-bet":0
-    },
-
-    { "slot-number":35,
-        "slot-bet":0
-    },
-
-    { "slot-number":36,
-        "slot-bet":0
-    },
-
-    { "slot-number":37,
-        "slot-bet":0
-    },
-
-    { "slot-number":38,
-        "slot-bet":0
-    },
-
-    { "slot-number":39,
-        "slot-bet":0
-    },
-
-    { "slot-number":40,
-        "slot-bet":0
-    },
-]
 
 

@@ -115,3 +115,29 @@
   border: #111;
   border-style: double;
  }
+
+ .radio_group_labels {
+   display: inline-block;
+   width: 50px;
+ }
+
+ .spin-wheel-container {
+   float: none;
+   padding: 250px;
+ }
+
+ #spin-wheel {
+    width: 200px;
+    height: 200px;
+    text-decoration: solid;
+    font-size: large;
+    font-weight: bold;
+ }
+
+ #spin-wheel:hover {
+   background-color: red;
+ }
+
+ #spin-wheel:active{
+   background-color: #062d03;
+ }
