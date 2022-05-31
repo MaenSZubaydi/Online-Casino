@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -12,80 +13,253 @@
     <div>
       <h1>Menu</h1>
       <h2>Total Balance</h2>
-      <label for="html">Nill</label>
+      <label id="balance-label" for="html">Nill</label>
       <h2>Add Balance</h2>
-      <input type="text" placeholder="Add Balance">
-      <button>Add to Balance</button>
+      <input id="balance-text" type="text" placeholder="Add Balance">
+      <button id="add-balance">Add to Balance</button>
       
     </div>
     
 </div>
 
 <div class="content">
-  <h2>Welcome to Roullette</h2>
+  <h2 id="header1">Welcome to Roullette</h2>
   
-  <div>
-    <button id="slot-0"></button>
+  <div class="table-slots" id="zero-btn">
+    <button id="slot-0">Zero</button>
   </div>
 
-  <div>
+  <div class="table-slots" id="first-row">
     
-    <button id="slot-1"></button>
-    <button id="slot-2"></button>
-    <button id="slot-3"></button>
-    <button id="slot-4"></button>
-    <button id="slot-5"></button>
-    <button id="slot-6"></button>
-    <button id="slot-7"></button>
-    <button id="slot-8"></button>
-    <button id="slot-9"></button>
-    <button id="slot-10"></button>
-    <button id="slot-11"></button>
-    <button id="slot-12"></button>
+    <button class="black" id="slot-1" >1</button>
+    <button class="red" id="slot-2">2</button>
+    <button class="black" id="slot-3">3</button>
+    <button class="red" id="slot-4">4</button>
+    <button class="black" id="slot-5">5</button>
+    <button class="red" id="slot-6">6</button>
+    <button class="black" id="slot-7">7</button>
+    <button class="red" id="slot-8">8</button>
+    <button class="black" id="slot-9">9</button>
+    <button class="red" id="slot-10">10</button>
+    <button class="black" id="slot-11">11</button>
+    <button class="red" id="slot-12">12</button>
     
 
   </div>
-  <div>
-    <button id="slot-13"></button>
-    <button id="slot-14"></button>
-    <button id="slot-15"></button>
-    <button id="slot-16"></button>
-    <button id="slot-17"></button>
-    <button id="slot-18"></button>
-    <button id="slot-19"></button>
-    <button id="slot-20"></button>
-    <button id="slot-21"></button>
-    <button id="slot-22"></button>
-    <button id="slot-23"></button>
-    <button id="slot-24"></button>
+  <div class="table-slots" id="second-row">
+    <button class="black" id="slot-13">13</button>
+    <button class="red" id="slot-14">14</button>
+    <button class="black" id="slot-15">15</button>
+    <button class="red" id="slot-16">16</button>
+    <button class="black" id="slot-17">17</button>
+    <button class="red" id="slot-18">18</button>
+    <button class="black" id="slot-19">19</button>
+    <button class="red" id="slot-20">20</button>
+    <button class="black" id="slot-21">21</button>
+    <button class="red" id="slot-22">22</button>
+    <button class="black" id="slot-23">23</button>
+    <button class="red" id="slot-24">24</button>
   
   </div>
 
-  <div>
-    <button id="slot-25"></button>
-    <button id="slot-26"></button>
-    <button id="slot-27"></button>
-    <button id="slot-28"></button>
-    <button id="slot-29"></button>
-    <button id="slot-30"></button>
-    <button id="slot-31"></button>
-    <button id="slot-32"></button>
-    <button id="slot-33"></button>
-    <button id="slot-34"></button>
-    <button id="slot-35"></button>
-    <button id="slot-36"></button>
+  <div class="table-slots" id="third-row">
+    <button class="black" id="slot-25">25</button>
+    <button class="red" id="slot-26">26</button>
+    <button class="black" id="slot-27">27</button>
+    <button class="red" id="slot-28">28</button>
+    <button class="black" id="slot-29">29</button>
+    <button class="red" id="slot-30">30</button>
+    <button class="black" id="slot-31">31</button>
+    <button class="red" id="slot-32">32</button>
+    <button class="black" id="slot-33">33</button>
+    <button class="red" id="slot-34">34</button>
+    <button class="black" id="slot-35">35</button>
+    <button class="red" id="slot-36">36</button>
   </div>
-  <button id="even"></button>
-    <button id="red"></button>
-    <button id="black"></button>
-    <button id="odd"></button>
-  <div>
 
+  
+  <div class="table-slots" id="fourth-row">
+    <button id="slot-37">EVEN</button>
+    <button class="red" id="slot-38">RED</button>
+    <button class="black" id="slot-39">BLACK</button>
+    <button id="slot-40">ODD</button>
+  </div>
+
+  <div><h2>Table Bets</h2></div>
+
+  <div class="table-view">
+    <div class="table-square-green">
+      <label for="table-view">0</label>
+      <label for="table-view" id="slot0"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">3</label>
+      <label for="table-view" id="slot3"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">6</label>
+      <label for="table-view" id="slot6"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">9</label>
+      <label for="table-view" id="slot9"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">12</label>
+      <label for="table-view" id="slot12"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">15</label>
+      <label for="table-view" id="slot15"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">18</label>
+      <label for="table-view" id="slot18"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">21</label>
+      <label for="table-view" id="slot21"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">24</label>
+      <label for="table-view" id="slot24"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">27</label>
+      <label for="table-view" id="slot27"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">30</label>
+      <label for="table-view" id="slot30"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">33</label>
+      <label for="table-view" id="slot33"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">36</label>
+      <label for="table-view" id="slot36"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">2</label>
+      <label for="table-view" id="slot2"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">5</label>
+      <label for="table-view" id="slot5"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">8</label>
+      <label for="table-view" id="slot8"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">11</label>
+      <label for="table-view" id="slot11"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">14</label>
+      <label for="table-view" id="slot14"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">17</label>
+      <label for="table-view" id="slot17"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">20</label>
+      <label for="table-view" id="slot20"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">23</label>
+      <label for="table-view" id="slot23"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">26</label>
+      <label for="table-view" id="slot26"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">29</label>
+      <label for="table-view" id="slot29"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">32</label>
+      <label for="table-view" id="slot32"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">35</label>
+      <label for="table-view" id="slot35"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">1</label>
+      <label for="table-view" id="slot1"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">4</label>
+      <label for="table-view" id="slot4"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">7</label>
+      <label for="table-view" id="slot7"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">10</label>
+      <label for="table-view" id="slot10"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">13</label>
+      <label for="table-view" id="slot13"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">16</label>
+      <label for="table-view" id="slot16"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">19</label>
+      <label for="table-view" id="slot19"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">22</label>
+      <label for="table-view" id="slot22"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">25</label>
+      <label for="table-view" id="slot25"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">28</label>
+      <label for="table-view" id="slot528"></label>
+    </div>
+    <div class="table-square-black">
+      <label for="table-view">31</label>
+      <label for="table-view" id="slot31"></label>
+    </div>
+    <div class="table-square-red">
+      <label for="table-view">34</label>
+      <label for="table-view" id="slot34"></label>
+    </div>
+    <div class="table-square-bottom">
+      <label for="table-view">EVEN</label>
+      <label for="table-view" id="slot37"></label>
+    </div>
+    <div class="table-square-bottom">
+      <label for="table-view">RED</label>
+      <label for="table-view" id="slot38"></label>
+    </div>
+    <div class="table-square-bottom">
+      <label for="table-view">BLACK</label>
+      <label for="table-view" id="slot39"></label>
+    </div>
+    <div class="table-square-bottom">
+      <label for="table-view">ODD</label>
+      <label for="table-view" id="slot40"></label>
+    </div>
   </div>
 
 </div>
 
+
+
 </body>
+<script src="index.js"></script>
 </html>
 
 

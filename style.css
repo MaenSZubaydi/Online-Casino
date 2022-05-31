@@ -43,3 +43,75 @@
   div label {
     color: white;
   }
+
+  .table-slots button {
+    margin: 5px;
+    font-size:  32px;
+    width: 48px;
+    color: white;
+  }
+
+  #fourth-row button {
+    width: 150px;
+    
+  }
+
+  #zero-btn button {
+    width: 150px;
+    background-color: #158b3d;
+  }
+
+  #slot-37 {
+    background-color: #158b3d;
+  }
+
+  #slot-40 {
+    background-color: #158b3d;
+  }
+
+ .black {
+   background-color: black;
+   
+ }
+
+ .red {
+   background-color: red;
+   
+ }
+
+ .table-view {
+   float: left;
+  background-color: grey; 
+  height: 200px;
+  width: 650px;
+ }
+
+ .table-square-red {
+  float: left;
+  background-color: red;
+  height: 50px;
+  width: 50px;
+ }
+
+ .table-square-black {
+  float: left;
+  background-color: black;
+  height: 50px;
+  width: 50px;
+ }
+
+ .table-square-green {
+  float: left;
+  background-color: #062d03;
+  height: 200px;
+  width: 50px; 
+ }
+
+ .table-square-bottom {
+  float: left;
+  background-color: #062d03;
+  height: 50px;
+  width: 150px;
+  border: #111;
+  border-style: double;
+ }
