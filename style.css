@@ -141,3 +141,15 @@
  #spin-wheel:active{
    background-color: #062d03;
  }
+
+ #spin-result {
+   font-size: 5em;
+   margin-left: 20px;
+   text-align: center;
+ }
+
+ #spin-deposit {
+  font-size: 5em;
+  margin-left: 50px;
+  text-align: center;
+ }
