@@ -28,8 +28,9 @@ fourthRow.addEventListener("click", placeBet);
 
 //function triggered when you press spin wheel button
 spinWheel.addEventListener("click", function(){
-    //let spinResult = 3;
-    let spinResult = Math.floor(Math.random() * 37);
+    document.querySelector("#spin-deposit").innerHTML="";
+    let spinResult = 0;
+    //let spinResult = Math.floor(Math.random() * 37);
     document.querySelector("#spin-result").innerHTML=spinResult;
     checkWinnings(spinResult);
     resetTable();
@@ -44,7 +45,7 @@ addBalanceButton.addEventListener("click", function(){
 });
 
 //function called after each spin to reset the table and collect lost bets
-function resetTable(){
+function resetTable() {
     tableSlotsArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     const tableArray = document.querySelectorAll(".slots");
     for(slot of tableArray){
@@ -57,12 +58,58 @@ function checkWinnings(resultNumber) {
     let result = "slot" + resultNumber;
     let winningSlot = document.querySelector('#'+result);
     let depositedAmount = parseFloat(winningSlot.innerHTML);
-    if(depositedAmount>0){
-        totalDeposit += depositedAmount*35;
-        document.querySelector("#spin-deposit").innerHTML="You won: $" + depositedAmount*35;
-        document.querySelector("#balance-label").innerHTML=totalDeposit; 
+    let winnings =0; 
+    if(resultNumber>0) {
+        winnings+= checkEvenOdd(resultNumber);
+        winnings+= checkRedBlack(resultNumber);
     }
-    
+    winnings+= checkWinSlot(depositedAmount);
+    if(winnings>0){
+        totalDeposit += winnings;
+        document.querySelector("#spin-deposit").innerHTML="You won: $" + winnings;
+        document.querySelector("#balance-label").innerHTML=totalDeposit; 
+    } 
+}
+
+//check win slot
+function checkWinSlot(amount) {
+    if(amount>0){
+        return amount*35;
+    }
+    else 
+    {
+        return 0;
+    }
+}
+
+//check even or odd winning slots
+function checkEvenOdd(slot){
+    let evenDeposit = tableSlotsArray[37];
+    let oddDeposit = tableSlotsArray[40];
+    if(evenDeposit>0 && slot%2==0){
+        return evenDeposit*2;
+    } 
+    else if (oddDeposit>0 && slot%2==1){
+        return oddDeposit*2;
+    } 
+    else {
+        return 0;
+    }
+}
+
+function checkRedBlack(slot) {
+    let redDeposit = tableSlotsArray[38];
+    let blackDeposit = tableSlotsArray[39];
+    let winSlot = document.querySelector('#'+'slot-'+slot);
+    if(redDeposit>0 && winSlot.className=="red") {
+        return redDeposit*2;
+    } 
+    else if (blackDeposit>0 && winSlot.className=="black") {
+        return blackDeposit*2;
+    } 
+    else {
+        return 0;
+    }
 }
 
 //function called when to place bets on a number
