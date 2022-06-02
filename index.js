@@ -29,8 +29,8 @@ fourthRow.addEventListener("click", placeBet);
 //function triggered when you press spin wheel button
 spinWheel.addEventListener("click", function(){
     document.querySelector("#spin-deposit").innerHTML="";
-    let spinResult = 0;
-    //let spinResult = Math.floor(Math.random() * 37);
+    //let spinResult = 0;
+    let spinResult = Math.floor(Math.random() * 37);
     document.querySelector("#spin-result").innerHTML=spinResult;
     checkWinnings(spinResult);
     resetTable();
